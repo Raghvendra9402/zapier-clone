@@ -1,11 +1,7 @@
 import { RegisterForm } from "@/components/shared/register-form";
 
 const page = () => {
-  return (
-    <div>
-      <RegisterForm />
-    </div>
-  );
+  return <RegisterForm />;
 };
 
 export default page;
