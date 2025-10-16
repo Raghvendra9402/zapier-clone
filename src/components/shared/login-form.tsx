@@ -26,6 +26,7 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import Image from "next/image";
 
 const loginSchema = z.object({
   email: z.email("Enter valid email address"),
@@ -64,10 +65,12 @@ export function LoginForm() {
 
   return (
     <div className="flex flex-col gap-6">
-      <Card>
+      <Card className="shadow-lg border border-gray-200 rounded-2xl bg-white">
         <CardHeader className="text-center">
-          <CardTitle>Welcome back</CardTitle>
-          <CardDescription>Login to continue</CardDescription>
+          <CardTitle className="text-2xl font-semibold">Welcome back</CardTitle>
+          <CardDescription className="text-gray-500">
+            Login to continue
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -80,6 +83,12 @@ export function LoginForm() {
                     type="button"
                     disabled={isPending}
                   >
+                    <Image
+                      src={"/github.svg"}
+                      alt="Github"
+                      width={20}
+                      height={20}
+                    />
                     Continue with Github
                   </Button>
                   <Button
@@ -88,6 +97,12 @@ export function LoginForm() {
                     type="button"
                     disabled={isPending}
                   >
+                    <Image
+                      src={"/google.svg"}
+                      alt="Google"
+                      width={20}
+                      height={20}
+                    />
                     Continue with Google
                   </Button>
                 </div>
