@@ -12,6 +12,11 @@ export const execute = inngest.createFunction(
       model: google("gemini-2.5-flash"),
       system: "You are a experienced chef mastery specially in indian dishes.",
       prompt: "give me a tasty matar paneer recipe",
+      experimental_telemetry: {
+        isEnabled: true,
+        recordInputs: true,
+        recordOutputs: true,
+      },
     });
 
     return steps;
