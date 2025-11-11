@@ -12,7 +12,7 @@ export const workflowsRouter = createTRPCRouter({
   create: premiumProcedure.mutation(({ ctx }) => {
     return prisma.workflow.create({
       data: {
-        name: generateSlug(5),
+        name: generateSlug(2),
         userId: ctx.auth.user.id,
       },
     });
